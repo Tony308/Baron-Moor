@@ -3,17 +3,13 @@ import java.util.ArrayList;
 public abstract class Treasure implements distance {
 
     ArrayList<Treasure> treasures;
-
+    private boolean proceed;
     private double distance;
     private String heading;
 
     Treasure(double distance) {
         this.setDistance(distance);
         this.heading = rdmDirection(Math.random()*10);
-    }
-
-    public void addToTreasure(Treasure spawn) {
-        treasures.add(spawn);
     }
 
     @Override
@@ -42,6 +38,8 @@ public abstract class Treasure implements distance {
         }
     }
 
+    public abstract boolean checkWin(double distance);
+
     public String rdmDirection(double random) {
         String[] four = {"north", "west", "south", "east"};
         String result = "";
@@ -56,32 +54,6 @@ public abstract class Treasure implements distance {
             result = four[3];
         }
         return result;
-    }
-
-    public double getClosest() {
-        Main main = new Main();
-        double[] compare = new double[main.list.listOfTreasure.size()];
-        int counter = 0;
-
-        for (Treasure item:main.list.listOfTreasure) {
-            compare[counter] = item.getDistance();
-            counter++;
-        }
-
-        double lowest = 0;
-        counter = 1;
-        if (compare[counter] > compare[counter+1])
-            lowest = compare[counter+1];
-
-        do {
-            if (compare[counter] < lowest) {
-
-            }
-
-        } while (counter < compare.length);
-        /*Math.max(compare[0], compare[1]);*/
-
-        return lowest;
     }
 
     public double getDistance() {
@@ -100,4 +72,8 @@ public abstract class Treasure implements distance {
     public void setHeading(String heading) {
         this.heading = heading;
     }
+
+    public abstract boolean isProceed();
+
+    public abstract void setProceed(boolean proceed);
 }

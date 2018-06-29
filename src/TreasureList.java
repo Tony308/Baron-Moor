@@ -10,4 +10,5 @@ public class TreasureList {
     public void add(Treasure item){
         listOfTreasure.add(item);
     }
+
 }
