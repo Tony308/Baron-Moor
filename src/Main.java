@@ -64,6 +64,7 @@ public class Main {
         //
 
         player.setDistance(lowest);
+        boolean continu = true;
 
         do {
             System.out.println("The compass indicates " + (int) player.getDistance());
@@ -80,7 +81,12 @@ public class Main {
             //updates distance of player from goal.
             player.setDistance(win.getDistance());
 
+            continu = win.checkWin(player.getDistance());
+            gold.checkWin(player.getDistance());
+            gold1.checkWin(player.getDistance());
+            gold2.checkWin(player.getDistance());
+
             //While true execute
-        } while (win.checkWin(player.getDistance()));
+        } while (continu);
     }
 }

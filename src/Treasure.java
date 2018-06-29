@@ -3,7 +3,8 @@ import java.util.ArrayList;
 public abstract class Treasure implements distance {
 
     ArrayList<Treasure> treasures;
-    private boolean proceed;
+
+    private boolean proceed = true;
     private double distance;
     private String heading;
 
@@ -76,4 +77,5 @@ public abstract class Treasure implements distance {
     public abstract boolean isProceed();
 
     public abstract void setProceed(boolean proceed);
+
 }
