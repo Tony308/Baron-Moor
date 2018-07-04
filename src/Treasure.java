@@ -4,7 +4,7 @@ public abstract class Treasure implements distance {
 
     ArrayList<Treasure> treasures;
 
-    private boolean proceed = true;
+    private boolean proceed;
     private double distance;
     private String heading;
 
@@ -30,6 +30,7 @@ public abstract class Treasure implements distance {
             System.out.println("You've walked quite a bit. Chillax perhaps?");
             this.setDistance(this.getDistance() - (playerTravel/2));
         } else {
+
             if (this.heading.equals(direction)) {
                 this.setDistance(this.getDistance() - playerTravel);
 

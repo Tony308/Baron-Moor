@@ -12,7 +12,7 @@ public class Gold extends Treasure {
 
         setProceed(true);
         if (distance < 10) {
-            setProceed(true);
+            this.setProceed(true);
             System.out.println("You tripped over something.");
             System.out.println("It looks like a treasure chest. You un-asunder it and find gold inside ");
             System.out.println(this.getDropAmount() + " to be exact." );

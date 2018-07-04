@@ -9,12 +9,13 @@ public class Trap extends Treasure {
     @Override
     public boolean checkWin(double distance) {
 
-        setProceed(true);
+        this.setProceed(true);
         if (distance < 10) {
-            setProceed(true);
+            this.setProceed(false);
             System.out.println("You've reached an ominous chest");
             System.out.println("Oh tiger. You're dead.");
         }
+
         return this.isProceed();
     }
 

@@ -11,4 +11,8 @@ public class TreasureList {
         listOfTreasure.add(item);
     }
 
+    public void remove(Treasure item) {
+        listOfTreasure.remove(item);
+    }
+
 }
